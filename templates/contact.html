@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+    <h1>Let's Connect</h1>
+    <p style="color: #9ca3af; margin: 0.5rem 0 1.5rem 0;">Feel free to reach out for collaborations or opportunities.</p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for cat, msg in messages %}<div style="color: #10b981; margin-bottom: 1rem;">{{ msg }}</div>{% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" class="contact-form">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" required placeholder="Your Name">
+        </div>
+        <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" required placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" rows="5" required placeholder="Tell me about your requirement..."></textarea>
+        </div>
+        <button type="submit" class="btn primary-btn">Send Message</button>
+    </form>
+</section>
+{% endblock %}

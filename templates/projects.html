@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+    <h1>Projects Showcase</h1>
+    <div class="projects-grid">
+        {% for project in projects %}
+        <div class="project-card">
+            <h2>{{ project.title }}</h2>
+            <h4 style="color: #a855f7; margin: 0.3rem 0 0.8rem 0;">{{ project.subtitle }}</h4>
+            <p style="color: #9ca3af; font-size: 0.95rem; margin-bottom: 1rem;">{{ project.description }}</p>
+            <p style="font-size: 0.85rem; color: #38bdf8; margin-bottom: 1.2rem;"><strong>Tech:</strong> {{ project.tech }}</p>
+            <div style="display: flex; gap: 0.8rem;">
+                {% if project.github %}<a href="{{ project.github }}" target="_blank" class="btn" style="background: #1e293b; padding: 0.5rem 1rem; font-size: 0.9rem;">GitHub</a>{% endif %}
+                {% if project.demo %}<a href="{{ project.demo }}" target="_blank" class="btn primary-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Live Demo</a>{% endif %}
+            </div>
+        </div>
+        {% else %}
+        <p style="color: #9ca3af; margin-top: 1rem;">No projects added yet. Use Admin panel to add projects.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

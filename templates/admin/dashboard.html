@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <h1>Admin Dashboard</h1>
+    <p style="color: #9ca3af; margin-top: 0.5rem;">Manage your portfolio projects and received messages.</p>
+    <div style="display: flex; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap;">
+        <a href="{{ url_for('admin_projects') }}" class="project-card" style="text-decoration: none; color: inherit; flex: 1; min-width: 240px;">
+            <h3>Manage Projects</h3>
+            <p style="font-size: 2rem; color: #38bdf8; margin-top: 0.5rem;">{{ proj_count }} Projects</p>
+        </a>
+        <a href="{{ url_for('admin_messages') }}" class="project-card" style="text-decoration: none; color: inherit; flex: 1; min-width: 240px;">
+            <h3>View Messages</h3>
+            <p style="font-size: 2rem; color: #a855f7; margin-top: 0.5rem;">{{ msg_count }} Messages</p>
+        </a>
+    </div>
+    <div style="margin-top: 2rem;">
+        <a href="{{ url_for('logout') }}" class="btn" style="background-color: #ef4444; color: white;">Logout</a>
+    </div>
+</div>
+{% endblock %}
