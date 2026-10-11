@@ -2,7 +2,8 @@
 {% block content %}
 <div>
     <h1>Admin Dashboard</h1>
-    <p style="color: #9ca3af; margin-top: 0.5rem;">Manage your portfolio projects and received messages.</p>
+    <p style="color: #9ca3af; margin-top: 0.5rem;">Manage your portfolio projects, messages, and security settings.</p>
+    
     <div style="display: flex; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap;">
         <a href="{{ url_for('admin_projects') }}" class="project-card" style="text-decoration: none; color: inherit; flex: 1; min-width: 240px;">
             <h3>Manage Projects</h3>
@@ -13,7 +14,9 @@
             <p style="font-size: 2rem; color: #a855f7; margin-top: 0.5rem;">{{ msg_count }} Messages</p>
         </a>
     </div>
-    <div style="margin-top: 2rem;">
+
+    <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+        <a href="{{ url_for('change_password') }}" class="btn" style="background: #38bdf8; color: #0b0f19;">Change Password</a>
         <a href="{{ url_for('logout') }}" class="btn" style="background-color: #ef4444; color: white;">Logout</a>
     </div>
 </div>

@@ -8,7 +8,14 @@
             <h3 style="color: #38bdf8; margin-bottom: 1rem;">{{ category }}</h3>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem;">
                 {% for item in items %}
-                <li style="background: rgba(15, 23, 42, 0.5); padding: 0.5rem 1rem; border-radius: 8px; color: #cbd5e1;">{{ item }}</li>
+                <li style="background: rgba(15, 23, 42, 0.5); padding: 0.5rem 1rem; border-radius: 8px; 
+                    {% if loop.index0 == 0 %}color: #c084fc; border-left: 4px solid #c084fc;
+                    {% elif loop.index0 == 1 %}color: #38bdf8; border-left: 4px solid #38bdf8;
+                    {% elif loop.index0 == 2 %}color: #34d399; border-left: 4px solid #34d399;
+                    {% elif loop.index0 == 3 %}color: #fbbf24; border-left: 4px solid #fbbf24;
+                    {% else %}color: #f43f5e; border-left: 4px solid #f43f5e;{% endif %}">
+                    {{ item }}
+                </li>
                 {% endfor %}
             </ul>
         </div>

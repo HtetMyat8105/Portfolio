@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="max-width: 600px; margin: 0 auto;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <h1>Edit Project</h1>
+        <a href="{{ url_for('admin_projects') }}" class="btn" style="background: #334155; color: white;">Back</a>
+    </div>
+
+    <form method="POST" class="contact-form" style="max-width: 100%;">
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" name="title" value="{{ project.title }}" required>
+        </div>
+        <div class="form-group">
+            <label>Subtitle</label>
+            <input type="text" name="subtitle" value="{{ project.subtitle }}">
+        </div>
+        <div class="form-group">
+            <label>Technologies</label>
+            <input type="text" name="tech" value="{{ project.tech }}">
+        </div>
+        <div class="form-group">
+            <label>GitHub Link</label>
+            <input type="text" name="github" value="{{ project.github }}">
+        </div>
+        <div class="form-group">
+            <label>Demo Link</label>
+            <input type="text" name="demo" value="{{ project.demo }}">
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea name="description" rows="4">{{ project.description }}</textarea>
+        </div>
+        <button type="submit" class="btn primary-btn">Update Project</button>
+    </form>
+</div>
+{% endblock %}
